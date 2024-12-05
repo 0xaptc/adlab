@@ -154,7 +154,7 @@ workstations_public_ips = {
 
 > Don't worry if during the provisioning you see a few messages looking like `FAILED - RETRYING: List Kibana index templates (xx retries left)`
 
-By default, resources are deployed in the `West Europe` region under a resource group `ad-hunting-lab`. You can control the region with a Terraform variable:
+By default, resources are deployed in the `West Europe` region under a resource group `ad-lab`. You can control the region with a Terraform variable:
 
 ```
 terraform apply -var 'region=East US 2'

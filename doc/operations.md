@@ -36,11 +36,11 @@ workstations_public_ips = {
 While `terraform destroy` is an option, I found that simply nuking the resource group works better. You'll also need to remove the Terraform state file to make sure Terraform understands it shouldn't manage it anymore.
 
 ```bash
-az group delete --yes --no-wait -g ad-hunting-lab
+az group delete --yes --no-wait -g ad-lab
 rm terraform/terraform.tfstate
 ```
 
-Note: Resource groups take a non-negligible amount of time to be deleted. Remove the `--no-wait` flag to have the command hang until the deletion is performed. If you remove the lab and re-instantiate it shortly afterwards, you might run into vCPU quota issues in Free Tier subscriptions, in which case I'd suggest to change the region and resource group name to something else in your new instantiation (e.g. `East US` and `ad-hunting-lab-2`)
+Note: Resource groups take a non-negligible amount of time to be deleted. Remove the `--no-wait` flag to have the command hang until the deletion is performed. If you remove the lab and re-instantiate it shortly afterwards, you might run into vCPU quota issues in Free Tier subscriptions, in which case I'd suggest to change the region and resource group name to something else in your new instantiation (e.g. `East US` and `ad-lab-2`)
 
 ## SSH'ing to the Elasticsearch/Kibana instance
 

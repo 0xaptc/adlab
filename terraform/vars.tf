@@ -26,14 +26,14 @@ variable "ssh_key" {
 
 variable "region" {
   description = "Azure region in which resources should be created. See https://azure.microsoft.com/en-us/global-infrastructure/locations/"
-  default     = "West Europe"
+  default     = "East US"
 }
 
 variable "resource_group" {
   # Warning: see https://github.com/christophetd/adaz/blob/master/doc/faq.md#how-to-change-the-name-of-the-resource-group-in-which-resources-are-created
   # Warning: if you change this, also change it in ansible/inventory_azure_rm.yml
   description = "Resource group in which resources should be created. Will automatically be created and should not exist prior to running Terraform"
-  default     = "ad-hunting-lab"
+  default     = "ad-lab"
 }
 
 variable "dc_vm_size" {
