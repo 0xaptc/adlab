@@ -1,4 +1,4 @@
-# Adaz: Active Directory Hunting Lab in Azure
+# adlab
 
 ![](https://badgen.net/badge/icon/azure?icon=azure&label=platform) [![Maintained](https://img.shields.io/badge/maintained-Yes%20as%20of%20December%202024-green.svg)](https://shields.io/)
 
@@ -17,25 +17,6 @@ This project allows you to **easily spin up Active Directory labs in Azure** wit
 - Sysmon installed
 - Logs centralized in an Elasticsearch instance which can easily be queried from the Kibana UI
 - Domain easily configurable via YAML configuration file
-
-Here's an incomplete and biaised comparison with [DetectionLab](https://github.com/clong/DetectionLab):
-
-
-|                                  |        Adaz       |    DetectionLab    |
-|:--------------------------------:|:------------------:|:------------------:|
-|       Public cloud support       |        Azure       |         AWS, *Azure ([beta](https://github.com/clong/DetectionLab/tree/master/Azure))*     |
-| Expected time to spin up a lab   |     15-20 minutes     |     25 minutes     |
-| Log management & querying        |     Elasticsearch+Kibana |     Splunk Enterprise     |
-|                WEF               | :heavy_check_mark: | :heavy_check_mark: |
-|          Audit policies          | :heavy_check_mark: | :heavy_check_mark: |
-|              Sysmon              | :heavy_check_mark: | :heavy_check_mark: |
-|  **YAML domain configuration file**  | :heavy_check_mark: |   :no_entry_sign:  |
-|   **Multiple Windows 10 workstations support**   | :heavy_check_mark: |   :no_entry_sign:  |
-|     VirtualBox/VMWare support    |   :no_entry_sign:  | :heavy_check_mark: |
-|          osquery / fleet         |   :no_entry_sign:([vote!](https://github.com/christophetd/adaz/issues/10)) | :heavy_check_mark: |
-|   Powershell transcript logging  |   :no_entry_sign: ([vote!](https://github.com/christophetd/adaz/issues/5))  | :heavy_check_mark: |
-|   IDS logs |   :no_entry_sign: ([vote!](https://github.com/christophetd/adaz/issues/7))  | :heavy_check_mark: |
-
 
 ## Use-cases
 
@@ -123,7 +104,7 @@ workstations_public_ips = {
 
 > Don't worry if during the provisioning you see a few messages looking like `FAILED - RETRYING: List Kibana index templates (xx retries left)`
 
-By default, resources are deployed in the `West Europe` region under a resource group `ad-lab`. You can control the region with a Terraform variable:
+By default, resources are deployed in the `East US` region under a resource group `ad-lab`. You can control the region with a Terraform variable:
 
 ```
 terraform apply -var 'region=East US 2'
@@ -139,19 +120,3 @@ terraform apply -var 'region=East US 2'
 - [Common Operations: adding users, destroying the lab, etc.](./doc/operations.md)
 - [Project structure and directory organization](./doc/structure.md)
 - [Terraform variables available](./terraform/vars.tf)
-
-### Community
-
-Talks / posts referencing Adaz:
-
-- [Purple Teaming Cloud Identity: Simulation Labs for Red and Blue Teams](https://www.youtube.com/watch?v=xEn93_0jerk)
-- [(French) HoneyWISE : stratégie d’exploitation d’honeytokens en environnement Active Directory](https://www.cesar-conference.org/wp-content/uploads/2020/12/CESAR2020_070_A-TOURNYOL-du-CLOS_HoneyWISE_v3.pdf)
-
-### Roadmap
-
-I will heavily rely on the number of thumbs up votes you will leave on [`feature-proposal` issues](https://github.com/christophetd/adaz/issues?q=is%3Aissue+is%3Aopen+label%3Afeature-proposal+sort%3Areactions-%2B1-desc) for the next features!
-
-### Suggestions and bugs
-
-Feel free to open an issue or to tweet [@christophetd](https://twitter.com/christophetd).
-
