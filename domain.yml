@@ -7,7 +7,7 @@ dc_name: DC1
 # Credentials of the initial domain admin
 initial_domain_admin:
   username: admin
-  password: P@ssw0rd
+  password: P@ssw0rd!123
 
 organizational_units: {}
 
@@ -15,7 +15,7 @@ organizational_units: {}
 users:
 - username: admin
 - username: user
-  password: P@ssw0rd
+  password: P@ssw0rd!123
 
 # Domain groups
 groups:
