@@ -10,37 +10,6 @@ This project allows you to **easily spin up Active Directory labs in Azure** wit
 
  It exposes a high-level configuration file for your domain to allow you to customize users, groups and workstations.
 
- ```yaml
-dns_name: hunter.lab
-dc_name: DC-1
-
-initial_domain_admin:
-  username: hunter
-  password: MyAdDomain!
-
-organizational_units: {}
-
-users:
-- username: christophe
-- username: dany
-
-groups:
-- dn: CN=Hunters,CN=Users
-  members: [christophe]
-
-default_local_admin:
-  username: localadmin
-  password: Localadmin!
-
-workstations:
-- name: XTOF-WKS
-  local_admins: [christophe]
-- name: DANY-WKS
-  local_admins: [dany]
-
-enable_windows_firewall: yes
-```
-
 ## Features
 
 - Windows Event Forwarding pre-configured
