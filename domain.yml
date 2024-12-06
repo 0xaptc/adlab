@@ -6,7 +6,7 @@ dc_name: DC1
 
 # Credentials of the initial domain admin
 initial_domain_admin:
-  username: admin
+  username: aptcadmin
   password: P@ssw0rd!123
 
 organizational_units: {}
